@@ -14,9 +14,119 @@
 			{\Large Математический анализ. \\ Контрольная работа №1 \\ Роман Гафиятуллин (192001-04)}
 		\end{center}
 	\end{titlepage}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\clearpage
 	\paragraph{04-1.1} Найти пределы функций, не пользуясь правилом Лопиталя. \\
-	
+	\begin{description}
+		\item[а)]
+			\ensuremath{
+				\lim_{x \to \infty} \frac{3 x ^2 - 5 x + 4}{x ^3 - x + 1} = \\
+				= \lim_{x \to \infty} 
+					\frac{x ^2}{x ^2} \cdot 
+					\frac
+						{ 3 - \frac{5}{x} + \frac{4}{x ^2} }
+						{ x - \frac{1}{x} + \frac{1}{x ^2} }
+				= \\
+				= lim_{x \to \infty} 
+					\frac
+						{ 3 - 0 + 0 }
+						{ x - 0 + 0 }
+				= \\
+				= lim{x \to \infty}
+					\frac{3}{x} = {\bf 0}
+			}
+		\item[б)]
+			\ensuremath{
+				\lim_{x \to 3} \frac{2 x ^2 - 9 x + 9}{x ^2 - 5 x + 6} = \\
+				= \lim_{x \to 3}
+					\frac{x ^2}{x ^2} \cdot 
+					\frac
+						{2 - \frac{9}{x} + \frac{9}{x ^2} }
+						{1 - \frac{5}{x} + \frac{6}{x ^2} } = \\
+				= \lim_{x \to 3}
+					\frac
+						{ 2 - 3 + 1 }
+						{ 1 - \frac{5}{3} + \frac{6}{9} } = \\
+				= \lim_{x \to 3}
+					\frac
+						{ 2 - 3 + 1 }
+						{ 1 - \frac{7}{3} } = {\bf 0}
+			}
+		\item[в)]
+			\ensuremath{
+				\lim_{x \to 1} \frac{\sqrt{5 - x} - \sqrt{3 + x}}{x - x ^2} = ? \\
+			}
+		\item[г)]
+			\ensuremath{
+				\lim_{x \to 0} \frac{3 x \cdot tg(x)}{sin ^2 (x)} = \\
+				= \lim_{x \to 0} 
+					\frac
+						{ \frac{3 x \cdot sin x}{cos x}}
+						{ sin ^2 x } = \\
+				\textcolor{Cyan}{// \lim_{x \to 0} sin x \sim x } \\
+				= \lim_{x \to 0}
+					\frac
+						{ \frac{ 3 x ^2 }{cos x} }
+						{ x ^2 } = \\
+				= \lim_{x \to 0}
+					\frac
+						{ 3 x ^2 }
+						{ x ^2 \cdot cos x } = \frac{3}{1} = {\bf 3}
+			}
+		\item[д)]
+			\ensuremath{
+				\lim_{x \to \infty} (\frac{2 x + 5}{2 x - 1}) ^{3 - x} = ?\\
+			}
+	\end{description}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\paragraph{04-1.2} Даны комплексные числа. Необходимо: а) выполнить действия в алгебраической форме; б) найти тригонометрическую форму числа \ensuremath{z} и вычислить \ensuremath{z ^{20}} ; найти корни уравнения \ensuremath{w ^3 + z = 0} и отметить их на комплексной плоскости. \\
+
+	\begin{description}
+		\item[а)]
+			\ensuremath{
+				( \frac
+					{ 3 - i }
+					{ -2 - 6i }
+				) ^3 
+				= \frac	
+					{18 - 26i}
+					{208 - 144i}
+				= {\bf -\frac{i}{8} }
+			}
+		\item[б)]
+			\ensuremath{
+				z = 1 + \sqrt{3}i \\
+				\\
+				r_{z} = \sqrt{Re(z) ^2 + Im(z) ^2} = 2 \\
+				\phi_{z} = arctg( \frac{ Im(z) }{ Re(z) } ) = \frac{\pi}{3} \\
+				\\
+				r_{z ^{20}} = r_{z}^{20} = 1048576 \\
+				\phi_{z ^{20}} = \phi_{z} \cdot 20 \ mod \ 2\pi = \frac{2 \pi}{3} \\
+				Re(z ^{20}) = r_{z ^{20}} \cdot cos(\phi_{z ^{20}}) = -524288\\
+				Im(z ^{20}) = r_{z ^{20}} \cdot i \cdot sin(\phi_{z ^{20}}) = 524288 \, i \sqrt{3}\\
+			}
+	\end{description}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\paragraph{04-1.3} Исходя из определения равенства множеств и операций над множествами, доказать тождество и проверить его с помощью диаграммы Эйлера – Венна. \\
+
+	\ensuremath{
+		A \cap ( B \cup C ) = (A \cap B) \cup (A \cap C)
+		\forall a 
+	}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\paragraph{04-1.4}\begin{description}
+		\item[а)] в разложении \ensuremath{(x ^k + y ^P) ^n} найти члены, содержащие \ensuremath{ x ^\alpha }, \\
+			если
+			\ensuremath{k = 2, p = 1, n = 10, \alpha = 16}
+		\item[б)] в разложении \ensuremath{(x + y + z + w) ^m} найти члены, содержащие \ensuremath{ x ^\gamma }, \\
+			если
+			\ensuremath{m = 9, \gamma = 6}
+	\end{description}
+
+
+
 \end{document}
 
