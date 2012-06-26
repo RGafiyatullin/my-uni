@@ -24,3 +24,4 @@ clean:
 	$(RM_F) RG-Uni-Calculus-Reference_Work_3.log
 	$(RM_F) RG-Uni-Calculus-Reference_Work_3.pdf
 	$(RM_F) RG-Uni-Calculus-Reference_Work_3-04-1-3-eps-converted-to.pdf
+	$(RM_F) RG-Uni-Calculus-Reference_Work_1-04-1-5-eps-converted-to.pdf

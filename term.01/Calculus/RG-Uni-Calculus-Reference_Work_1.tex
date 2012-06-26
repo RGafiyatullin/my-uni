@@ -54,7 +54,13 @@
 			}
 		\item[в)]
 			\ensuremath{
-				\lim_{x \to 1} \frac{\sqrt{5 - x} - \sqrt{3 + x}}{x - x ^2} = ? \\
+				\lim_{x \to 1} \frac{\sqrt{5 - x} - \sqrt{3 + x}}{x - x ^2} = \\
+				\textcolor{Cyan}{// \mbox{Домножаем на }\, (\sqrt{5 - x} + \sqrt{3 + x}) } \\
+				= \lim_{x \to 1}
+					\frac
+						{ (5 - x) - (3 + x) }
+						{ x \cdot (1 - x)(\sqrt{5 - x} + \sqrt{3 + x}) } = \\
+				= \lim_{x \to 1} \frac{2}{0} = \infty
 			}
 		\item[г)]
 			\ensuremath{
@@ -75,7 +81,43 @@
 			}
 		\item[д)]
 			\ensuremath{
-				\lim_{x \to \infty} (\frac{2 x + 5}{2 x - 1}) ^{3 - x} = ?\\
+				\lim_{x \to \infty} (\frac{2 x + 5}{2 x - 1}) ^{3 - x} = \\
+				= \lim_{x \to \infty}
+					(\frac
+							{ (2 x - 1) + 6 }
+							{ 2 x - 1 }
+					) ^{3 - x} = \\
+				= \lim_{x \to \infty}
+					(1 + \frac
+							{ 6 }
+							{ 2 x - 1 }
+					) ^{3 - x} = \\
+				= \lim_{x \to \infty}
+					(1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{3} }) ^{3 - x} = \\
+				= \lim_{x \to \infty}
+					(1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{6} }) ^{3 - x} = \\
+				= \lim_{x \to \infty}
+					(1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{6} }) ^{-3 (\frac{x}{3} - 1)} = \\
+				= \lim_{x \to \infty}
+					(1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{6} }) ^{-3 (\frac{x}{3} - \frac{1}{6}) - \frac{15}{6} } = \\
+				= \lim_{x \to \infty}
+					((1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{6} }) ^{\frac{x}{3} - \frac{1}{6}} ) ^{-3}
+							\cdot
+					(1 + \frac
+							{1}
+							{ \frac{x}{3} - \frac{1}{6} }) ^{-\frac{5}{2}}
+							 = \\
+				{\bf = e^{-3} \cdot 1 = \frac{1}{e^3} }
 			}
 	\end{description}
 
@@ -158,7 +200,33 @@
 			}
 	\end{description}
 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\paragraph{04-1.5} Задана функция \ensuremath{y = f(x)}. Установить, является ли данная функция непрерывной. В случае разрыва функции в некоторой точке найти ее пределы слева и справа, классифицировать характер разрыва. Построить схематично график функции.
 
-
+	\ensuremath{
+		y = \left \{ \begin{array}{rl}
+			cos x, &\mbox{ $x \le 0$ }; \\
+			x ^2 + 1, &\mbox{ $0 < x < 1$ }; \\
+			x, &\mbox{ $x \ge 1$ }.
+		\end{array} \right .
+	}
+	\\\\
+	\ensuremath{
+		\left.\begin{array}{rl}
+			cos x = 1, \, x = 0 \\
+			lim_{ x \to 0+ } \, x ^2 + 1 = 1 \\
+		\end{array} \right \} \Rightarrow 
+	} Функция неразрывна при \ensuremath{ x \in (-\infty; 1) }
+	\\\\
+	\ensuremath{
+		\left.\begin{array}{rl}
+			lim_{ x \to 1- } \, x ^2 + 1 = 2 \\
+			x = 1 \, \mbox{ при x = 1 }
+		\end{array} \right \} \Rightarrow
+		\vbox{
+			Разрыв первого рода: функция определена в точке \ensuremath{x = 1}, \\
+			односторонний предел слева существует и конечен.
+		}
+	}
+	\includegraphics[width=450px,height=250px]{RG-Uni-Calculus-Reference_Work_1-04-1-5.eps}
 \end{document}
-
