@@ -1,5 +1,5 @@
 
-all: bin/parser bin/trees bin/exam
+all: bin/parser bin/trees
 
 
 bin:
@@ -10,6 +10,8 @@ bin/parser: bin src/*.pas
 
 bin/trees: bin src/*.pas
 	fpc -obin/trees ./src/trees.pas
+
+dist-clean: clean
 
 clean:
 	rm -f bin/parser
