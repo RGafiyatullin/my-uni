@@ -123,6 +123,55 @@
 			\ensuremath{
 				[ \, -2; 2 \, ]
 			}
+		\\
+		Область определения: \ensuremath{ \, x \in (-\infty; 3) \cup (3; \infty) } \\
+		\ensuremath{
+			\textcolor{Cyan}{ // g(x) = x ^2 - 5 } \\
+			\textcolor{Cyan}{ // h(x) = x - 3 } \\
+			\textcolor{Cyan}{ // g'(x) = 2x } \\
+			\textcolor{Cyan}{ // h'(x) = 1 } \\
+			\textcolor{Cyan}{ 
+				// ( \frac{g(x)}{h(x)} )' 
+				= \frac{ g'(x) \cdot h(x) - h'(x) \cdot g(x) }{ h(x)^2 }
+			} \\
+			y' 
+				= \frac
+					{ 2x \cdot (x - 3) - (x ^2 - 5) }
+					{ (x - 3)^2 } 
+				= \frac
+					{ x ^2 - 6 x + 5 }
+					{ (x - 3)^2 }
+				= \frac
+					{ (x - 5)(x - 1) }
+					{ (x - 3) ^2 }
+		} \\
+		\ensuremath{ y' \, } не определена при \ensuremath{ \, x = 3 } \\
+		\ensuremath{ x = 1 \, } и \ensuremath{ \, x = 5 \,} --- стационарные точки \ensuremath{\, y'} \\
+		\\
+		{\bf Интервалы монотонности:}
+		\begin{description}
+			\item[\ensuremath{x \in (\,-\infty; 1)}] --- возрастает
+			\item[\ensuremath{x \in (1; 3)}] --- убывает 
+			\item[\ensuremath{x \in (3; 5)}] --- убывает
+			\item[\ensuremath{x \in (5; \infty)}] --- возрастает
+		\end{description}
+		На отрезке \ensuremath{ x \in [-2; 2] }: \\
+			\ensuremath{y'(1) = 0, \, y(1) = 2 \Rightarrow} 
+				\ensuremath{x = 1} -- локальный экстремум функции \ensuremath{y}\\\\
+				\ensuremath{
+					\left . \begin{array}{rl}
+						y'(x) > 0 \, \mbox{при} \, $x < 1$ \\
+						y'(x) < 0 \, \mbox{при} \, $x > 1$
+					\end{array} \right\} \Rightarrow x = 1 \mbox{ -- локальный максимум функции } y
+				} \\\\
+			\ensuremath{
+				\left . \begin{array}{rl}
+					y(-2) = \frac{1}{5} \\
+					y(2) = 1
+				\end{array} \right\} 
+					\Rightarrow x = -2 
+					\mbox{ -- минимальное значение \ensuremath{y} при } x \in [-2; 2]
+			}
 	\end{description}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
