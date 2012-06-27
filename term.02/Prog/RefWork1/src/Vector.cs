@@ -3,7 +3,7 @@ namespace RG.Term02.RefWork1 {
 	using System;
 	using System.Text;
 
-	public class Vector <T> : IHasItemsRepresentableAsString {
+	public class Vector <T> {
 		public int Dim {
 			get; private set;
 		}
@@ -39,7 +39,7 @@ namespace RG.Term02.RefWork1 {
 
 		override 
 		public string ToString() {
-			var ret = new StringBuilder( base.ToString() + " " );
+			var ret = new StringBuilder( TypeName + " " );
 			ret.Append(ToStringValuesOnly());
 			return ret.ToString();
 		}
@@ -59,6 +59,12 @@ namespace RG.Term02.RefWork1 {
 			}
 			ret.Append(" }");
 			return ret.ToString();
+		}
+
+		public string TypeName {
+			get {
+				return base.ToString();
+			}
 		}
 	}
 }

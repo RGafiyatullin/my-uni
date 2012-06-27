@@ -5,7 +5,7 @@ MKDIR_P = mkdir -p
 RM_F = rm -f
 RMDIR = rmdir
 
-all: bin/RefWork1.dll bin/Test01.exe
+all: bin/RefWork1.dll bin/Test01.exe bin/Test02.exe
 
 clean:
 	$(RM_F) bin/RefWork1.dll*
