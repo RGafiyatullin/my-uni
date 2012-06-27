@@ -25,16 +25,14 @@ namespace RG.Term02.RefWork1 {
 			}
 		}
 
-		public T this[int idx] {
-			get { return _Items[idx]; }
-			set { _Items[idx] = value; }
+		public void EnsureIDX(int idx) {
+			if ( idx < 0 || idx > Dim - 1 )
+				throw new ArgumentException("Invalid idx: " + idx + "; Expected: [0, " + (Dim - 1) + "]");
 		}
 
-		public T GetItem(int idx){
-			return this[idx];
-		}
-		public void SetItem( int idx, T item ) {
-			this[idx] = item;
+		public T this[int idx] {
+			get { EnsureIDX(idx); return _Items[idx]; }
+			set { EnsureIDX(idx); _Items[idx] = value; }
 		}
 
 		override 

@@ -1,0 +1,10 @@
+
+			throw new NotImplementedException("Sorry mate, not this time...");			
+		}
+		static internal T Multiply(object a, object b) {
+			// MethodInfo mi = typeof(T).GetMethod("op_Multiply", BindingFlags.Static | BindingFlags.Public );
+			// Console.WriteLine("a: {0}; b: {1}; mi: {2}", a, b, mi == null);
+			// return (T) mi.Invoke(a, new Object[]{b});
+
+			var t = typeof(T);
+			//if ( t == typeof(Int64) ) return (T) Convert.ChangeType( (Int64)a * (Int64)b, typeof(T) );
