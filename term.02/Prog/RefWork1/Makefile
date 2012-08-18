@@ -1,6 +1,6 @@
 
 MONO = mono --debug
-CSC = gmcs -debug
+CSC = dmcs -debug
 MKDIR_P = mkdir -p
 RM_F = rm -f
 RMDIR = rmdir

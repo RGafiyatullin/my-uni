@@ -1,0 +1,250 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\title{Инструменты и Средства Программирования - Роман Гафиятуллин (192001-04)}
+\author{Роман Гафиятуллин\\ БГУИР}
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			{\Large Инструменты и Средства Программирования. \\ Контрольная работа №1 \\ Роман Гафиятуллин (192001-04)}
+		\end{center}
+	\end{titlepage}
+	\clearpage
+	\begin{enumerate}
+		\item (ObjPascal) Можно ли объявить свойство в секции private? 
+			\begin{description}
+				\item[A] \sout{Да, если это свойство только для чтения.}
+				\item[B] Да, любое свойство.
+				\item[C] \sout{Да, если это простое свойство, а не свойство-массив.}
+				\item[D] \sout{Нельзя.}
+			\end{description}
+			Почему бы и нет?
+
+		\item (C\#) Какое утверждение верно об автосвойствах? 
+			\begin{description}
+				\item[A] \sout{Автосвойства должны иметь один из примитивных типов.}
+				\item[B] \sout{Автосвойства могут быть свойствами только для чтения.}
+				\item[C] Автосвойства могут иметь любой тип.
+				\item[D] \sout{Автосвойства автоматически объявляются с модификатором public.}
+			\end{description}
+			Компилятор неявно создает анонимное поле для хранения значения передаваемого в авто-свойство.
+			\\
+			На это поле накладывается ровно тот же набор ограничений, что и на все остальные поля: никаких ограничений.
+
+		\item (C\#) Метод содержит единственный параметр \emph{params int[] x}.
+			\begin{description}
+				\item[A] \sout{Этот метод можно вызвать с тремя аргументами \emph{int[]}.}
+				\item[B] Этот метод можно вызвать, передав ему массив.
+				\item[C] \sout{Этот метод можно вызвать с тремя аргументами \emph{object}.}
+				\item[D] \sout{Этот метод можно вызвать, используя аргументы с \emph{ref} модификатором.}
+			\end{description}
+			Методы с переменным количеством аргументов можно вызывать как передавая аргументы один за одним, так и уложив их в массив.
+			\\
+			Семантически оба следующих вызова одинаковы:
+			\begin{verbatim}
+			MethodWithVariableArgsCount( new [] {1, 2, 3, 4} );
+			MethodWithVariableArgsCount( 1, 2, 3, 4 );
+			\end{verbatim}
+
+
+		\item (C\#) Какая комбинация модификаторов является допустимой при объявлении поля класса?
+			\begin{description}
+				\item[A] \sout{\emph{readonly var.}}
+				\item[B] \emph{public readonly}. 
+				\item[C] \sout{\emph{public internal.}}
+				\item[D] \sout{\emph{public var.}}
+			\end{description}
+			Всё, что с \emph{var} - бракуется сразу: поля/свойства класса/структуры необходимо объявлять явно указывая их тип.
+			\\
+			\emph{public} и \emph{internal} - являются аттрибутами одной категории (видимости), поэтому их совместное употребление - абсурд.
+			\\
+			\emph{public readonly} - допустимо.
+
+		\item (ObjPascal) У каких классов существует \emph{RTTI}?
+			\begin{description}
+				\item[A] \sout{Только у тех, которые имеют \emph{public}-элементы.}
+				\item[B] \sout{Только у тех, которые имеют свойства или события.}
+				\item[C] \sout{Только у тех, которые имеют виртуальные методы.}
+				\item[D] У всех.
+			\end{description}
+			RTTI доступно у всех объектов классов, унаследованных от TObject \ensuremath{ \Rightarrow } RTTI доступно у объектов всех классов.
+
+		\item (C\#) Перечислите директивы ограничения видимости в порядке «увеличения открытости».
+			\begin{description}
+				\item[A] \sout{Рrivate, public, protected.}
+				\item[B] \sout{Public, protected, private.}
+				\item[C] Рrivate, protected, public.
+				\item[D] \sout{Public, private, protected.}
+			\end{description}
+			\emph{private} - видно только себе; \\
+			\emph{protected} - себе и потомкам; \\
+			\emph{public} - всем.
+
+		\item (ObjPascal) В классе, который наследуется непосредственно от \emph{TObject}, объявлено два поля Integer, два свойства Integer и функция. Сколько байт в динамической памяти занимает один объект класса?
+			\begin{description}
+				\item[A] \sout{12}
+				\item[B] 8
+				\item[C] \sout{20}
+				\item[D] \sout{24}
+			\end{description}
+			На/в куче хранятся только члены-данные объекта (поля).
+			\\
+			Свойства являются синтаксическим сахаром, во время компиляции расскрывающимся в методы (т.н. getter и setter).
+			\\
+			Ответ: \begin{verbatim}2 * sizeof(Integer)\end{verbatim}
+			
+			Замечание: Integer -- по определению, double processor word. Да, на 32-разрядной архитектуре, два Integer, действительно займут 8 байт...
+
+		\item (ObjPascal) Вы объявляете свойство-массив. Каким может быть тип его индекса?
+			\begin{description}
+				\item[A] \sout{Любым.}
+				\item[B] Только числовым.
+				\item[C] \sout{Любым, но не классом.}
+				\item[D] \sout{Любым, но не строкой.}
+			\end{description}
+			Массив -- кусок памяти размером кратным размеру хранимой в нем записи.
+			\\
+			Доступ к элементам массива производится по адресу начального элемента плюс смещение.
+			\\
+			Смещение -- целое число элементов, на которое надо сместиться, с поправкой на языковые особенности Паскаля, вроде этой:
+			\begin{verbatim}
+			StrangeBuffer : Array[1024 .. 2048] of Byte;
+			\end{verbatim}
+
+		\item (C\#) Инициализатор объекта может задавать значения
+			\begin{description}
+				\item[A] \sout{Любых свойств, но не полей.}
+				\item[B] Только открытых свойств.
+				\item[C] \sout{Элементов (для классов-коллекций).}
+				\item[D] \sout{Констант класса.}
+			\end{description}
+			В языке C\# есть особенность \emph{object initializer}:
+			позволяют значения любым доступным полям или свойствам во время создания объекта
+			
+
+		\item (C\#) Какой модификатор нельзя использовать при описании параметра метода? 
+			\begin{description}
+				\item[A] \sout{\emph{params}.}
+				\item[B] \emph{var}.
+				\item[C] \sout{\emph{out}.}
+				\item[D] \sout{\emph{ref}.}
+			\end{description}
+			\emph{var} инструкция компилятору, вывести (to infer) тип переменной из контекста.
+			\\
+			В коде всей сборки может и не быть достаточно данных о том, какого типа переменные ждет какой либо метод (к примеру \emph{public} метод в \emph{public} классе).
+
+
+		\item (ObjPascal) В какой секции можно объявить конструктор класса? 
+			\begin{description}
+				\item[A] \sout{Только в секции protected или public.}
+				\item[B] \sout{Только в секции public.}
+				\item[C] В любой секции.
+				\item[D] \sout{Зависит от того, где объявлен конструктор класса-предка.}
+			\end{description}
+
+
+		\item (C\#) Что из перечисленного является ссылочным типом?
+			\begin{description}
+				\item[A] \sout{bool.}
+				\item[B] \sout{int.}
+				\item[A] \sout{double.}
+				\item[A] string.
+			\end{description}
+
+			System.String - это класс: http://msdn.microsoft.com/en-us/library/system.string.aspx
+
+		\item (C\#)  Переменная X имеет тип short. Какой тип будет у выражения X + 10? 
+			\begin{description}
+				\item[A] \sout{byte.}
+				\item[B] \sout{Это зависит от значения X.} 
+				\item[C] int.
+				\item[D] \sout{short.}
+			\end{description}
+
+			\begin{verbatim}
+			X :: short
+			10 :: int
+			X + 10 :: int
+			\end{verbatim}
+
+
+		\item (C\#)  Особенностью .NET Framework является
+			\begin{description}
+				\item[A] \sout{Поддержка ограниченного числа языков программирования.}
+				\item[B] \sout{Виртуальная среда исполнения программ.}
+				\item[C] \sout{Использование сборок.}
+				\item[D] \sout{Работа только в MS Windows.}
+			\end{description}
+
+			\emph{A} - количество языков теоретически не ограничено.
+			\\
+			\emph{B} - виртуальная машина используется не только .Net-ом, но и, к примеру - Джавой (JVM) и Эрлангом (BEAM)
+			\\
+			\emph{C} - 
+				да, .Net использует сборки. \\
+				Java - использует jar-файлы (архивы с *.class-файлами и манифестом), чем не сборка? \\
+				На особенность не тянет.
+			\\
+			\emph{D} - .Net framework -- это обычно реализация под MS Windows. \\
+				Также есть Mono Project -- довольно зрелая (в 2012 году) реализация для других платформ. Глупо от нее ожидать вещей типа COM-Interop или Windows Forms, но не завязанные на платформо-специфичные особенности приложения на ней работают: сервисы и Веб-приложения.
+
+		\item (ObjPascal) Где размещается указатель на VMT относительно полей объекта? 
+			\begin{description}
+				\item[A] \sout{В VMT родительского класса.}
+				\item[B] \sout{В динамической памяти, после полей объекта.}
+				\item[C] \sout{В динамической памяти, перед полями объекта.}
+				\item[D] В стеке или сегменте данных, перед полями объекта.
+			\end{description}
+
+		\item (C\#)  Какие модификаторы можно использовать при объявлении локальной переменной метода? 
+			\begin{description}
+				\item[A] \sout{Модификатор private или readonly.}
+				\item[B] \sout{Модификатор readonly.}
+				\item[C] \sout{Модификатор static или readonly.}
+				\item[D] Никаких модификаторов использовать нельзя.
+			\end{description}
+
+		\item (ObjPascal)  Что содержит переменная типа «указатель на метод» и какой её размер?
+			\begin{description}
+				\item[A] \sout{Указатель на VMT и значение self; 8 байт.}
+				\item[B] \sout{Адрес метода и параметры метода; размер зависит от количества параметров.}
+				\item[C] \sout{Адрес метода; 4 байта.}
+				\item[D] Адрес метода и значение self; 8 байт.
+			\end{description}
+
+		\item (C\#) Можно ли обнулить массив int[], перебирая его элементы в foreach и присваивая им 0? 
+			\begin{description}
+				\item[A] \sout{Да.} 
+				\item[B] \sout{Да, но только если массив не readonly.}
+				\item[C] Нет.
+			\end{description}
+
+			Нет - это \"foreach iteration variable\", её изменять нельзя.
+			\\
+			Логично, многие коллекции меняют свою структуру, при изменении их элементов. Итератор этого может не перенести.
+
+		\item (C\#) Какая комбинация модификаторов является допустимой при объявлении индексатора? 
+			\begin{description}
+				\item[A] \sout{public var.}
+				\item[B] \sout{static.}
+				\item[C] public.
+				\item[D] \sout{public internal.}
+			\end{description}
+
+		\item (C\#) Переменную какого типа можно использовать в качестве селектора в операторе switch-case? 
+			\begin{description}
+				\item[A] \sout{int[].}
+				\item[B] \sout{Переменную пользовательского класса.}
+				\item[C] bool.
+				\item[D] \sout{double.}
+			\end{description}
+
+
+	\end{enumerate}
+\end{document}
