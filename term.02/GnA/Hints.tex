@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+
+\begin{document}
+	\paragraph{1.7} Множество классов вычетов. Функция Эйлера. / (Residue Classes. Euler Toitent Function) \\
+	\\
+	\ensuremath{
+		\mathbb{Z}/m\mathbb{Z} = \{ \overline{0}, \, \overline{1}, \, ... , \, \overline{m - 1} \} \\
+		\\
+		\overline{i} = \{ m \cdot q + i \} \\
+		\\
+		\forall \, \overline{k}, \, \overline{l} \, \in \, \mathbb{Z}/m\mathbb{Z}, \\
+		k_{1}, \, k_{2} \, \in \, \overline{k}, \\
+		l_{1}, \, l_{2} \, \in \, \overline{l}: \\
+		k_{1} \cdot l_{1} \equiv k_{2} \cdot l_{2} \, (mod \, m) 
+		\iff 
+		k_{1} \cdot l_{1}, \, k_{2} \cdot l_{2} \, \in \overline{z}, \, z = k \cdot l \, (mod\,m) \\
+		\\
+		\forall \, \overline{k}, \, \overline{l} \, \in \, \mathbb{Z}/m\mathbb{Z}, \\
+		k_{1}, \, k_{2} \, \in \, \overline{k}, \\
+		l_{1}, \, l_{2} \, \in \, \overline{l}: \\
+		k_{1} + l_{1} \equiv k_{2} + l_{2} \, (mod \, m) 
+		\iff 
+		k_{1} + l_{1}, \, k_{2} + l_{2} \, \in \overline{s}, \, s = k + l \, (mod\,m) \\
+		\\
+		\forall \overline{k} \, \in \mathbb{Z}/m\mathbb{Z}: \, \overline{k} \cdot \overline{1} = \overline{k} \\
+		\forall \overline{k} \, \in \mathbb{Z}/m\mathbb{Z}: \, \overline{k} + \overline{0} = \overline{k} \\
+		m = 1 \, \iff \, \overline{0} = \overline{1} \in \mathbb{Z}/m\mathbb{Z} \\
+		\\
+		\forall \, \overline{k}, \, \overline{l}, \, \overline{k} \neq \overline{0}, \, \overline{l} \neq \overline{0}: \,\overline{k} \cdot \overline{l} \neq \overline{0} \\
+		\\
+		\overline{k}^{-1} = \overline{l} \, \Leftrightarrow \, \overline{k} \cdot \overline{l} = \overline{1}  \iff gcd(k, m) = 1 \text{ ( Bezout identity here! )}\\
+		\\
+		\\
+		\phi(p) = p - 1 \iff p \text{ is prime } \\
+		\phi(p^{s}) = p^{s} - p^{s - 1}, \, \forall s \in \mathbb{N} \\
+		gcd(n, m) = 1 \Rightarrow \phi(n \cdot m) = \phi(n) \cdot \phi(m) \\
+	}
+\end{document}
