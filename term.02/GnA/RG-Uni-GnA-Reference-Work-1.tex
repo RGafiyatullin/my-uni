@@ -186,15 +186,26 @@
 	}
 	\clearpage
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\paragraph{04-1.6} Заданы три вещественные функции: $f, g, h$. \\
+	\paragraph{04-1.6} Заданы три вещественные функции: 
+		\begin{itemize}
+			\item $f(x) = \frac{2}{x+1}$;
+			\item $g(x) = 8 x^{7} - 16$;
+			\item $h(x) = cos(10 x)$.
+		\end{itemize}
 		\begin{enumerate}
-			\item Найти композиции:
-				\begin{itemize}
-					\item $f \circ g \circ h$
-					\item $h \circ f \circ g$
-					\item $f \circ f \circ g$
-				\end{itemize}
+			\item Найти композиции: \\
+				\\
+				\ensuremath{
+					\begin{matrix}
+						f \circ g \circ h & &  y = \frac{2}{ 8 (cos(10 x))^{7} - 15} \\
+						\\
+						h \circ f \circ g & &  y = cos( \frac{20}{8x^{7} - 15}) \\
+						\\
+						f \circ f \circ g & &  y = \frac{ 16x^{7} - 30 }{ 8x^{7} - 13 } \\
+					\end{matrix}
+				}
 			\item Исследовать функции на инъективность, сюръективность, биективность на $\mathbb{R}$ \\
+				\\
 				\ensuremath{
 					\begin{matrix}
 						\hline
@@ -208,7 +219,20 @@
 						\\ \hline
 					\end{matrix}
 				}
-			\item Найти обратные функции данным; если ф-ции со своими областями определения обратных не имеют, то найти обратные функции для их сужений.
+			\item Найти обратные функции данным; если ф-ции со своими областями определения обратных не имеют, то найти обратные функции для их сужений. \\
+				\ensuremath{
+					\begin{matrix}
+						\hline
+						\text{Функция}			& \text{Обратная ф-ция} 				\\
+						\hline \\
+						f(x) = \frac{2}{x + 1}  &  f^{-1}(x) = \frac{2 - y}{y} 			\\
+						\\
+						g(x) = 8 x^{7} - 16 	&  g_{-}^{-1}(x) = \sqrt[7]{\frac{y+16}{8}} \text{  ; } x \in \mathbb{R^{*}} = \{ x | x \neq -1, \, x \in \mathbb{R} \}	\\
+						\\
+						h(x) = cos(10x) 		&  h_{-}^{-1}(x) = arccos(y) \text{  ;  } x \in \mathbb{R^{*}} = [-\frac{\pi}{10}; \, \frac{\pi}{10}]			\\
+						\\ \hline
+					\end{matrix}
+				}
 
 		\end{enumerate}
 
@@ -230,6 +254,8 @@
 	\ensuremath{
 		\mathbb{X} = [ -28 ; 13 ) \\
 		\mathbb{Y} = \mathbb{R}
+		\\ \\
+		y = - \frac{1}{x + 28} - \frac{1}{x - 13} \text{  ;  } x \in \mathbb{X} \text{ | К сожалению, не знаю, как сюда добавить $x = -28$}
 	}
 	\clearpage
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

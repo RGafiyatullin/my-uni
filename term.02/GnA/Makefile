@@ -1,7 +1,7 @@
 TEXI2PDF = texi2pdf
 RM_F = rm -f
 
-all: Hints.pdf RG-Uni-GnA-Reference-Work-1.pdf
+all: Hints.pdf RG-Uni-GnA-Reference-Work-1.pdf RG-Uni-GnA-Reference-Work-2.pdf
 
 RG-Uni-GnA-Reference-Work-1.pdf: RG-Uni-GnA-Reference-Work-1.tex
 	$(TEXI2PDF) RG-Uni-GnA-Reference-Work-1.tex
