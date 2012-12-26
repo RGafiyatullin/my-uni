@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  % language=C,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=2
+}
+
+\title{Алгоритмизация и Программирование. Семестр №3. Индивидуальная работа №1 - Роман Гафиятуллин (192001-04)}
+\author{Роман Гафиятуллин\\ БГУИР}
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			{\Large Алгоритмизация и Программирование. \\ Семестр №3. Индивидуальная работа №1 \\ Роман Гафиятуллин (192001-04)}
+		\end{center}
+	\end{titlepage}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\clearpage
+	\paragraph{1} Цена на молоко. Фермер в начале каждой зимы повышает отпускную цену на молоко на $d\%$, а каждым летом – снижает на столько же процентов. 
+					Изменится ли цена на молоко и если да, то в какую сторону и на сколько через $n$ лет?
+	\\
+	\\
+	\emph{Решение:}
+	\\
+	Цена на молоко через $n$ вычисляется согласно следующему закону ( берутся в расчет только летние цены ):
+	\\
+	\ensuremath{
+		\\
+		\hbox{Рекурентно [ за время равное $O(n)$ и память равную $O(n)$ ] } \\
+		p_{n} = p_{n - 1} \cdot (1 + d/100) \cdot (1 - d/100) \\
+		\\
+		\hbox{Используя формулу геометрической прогрессии [ за время - $O(log_{2} n)$ и память $O(1)$ ]} \\
+		p_{n} = p_{0} \cdot ( (1 + d/100) \cdot (1 - d/100) )^{n} \\
+	}
+	\\
+	Зимняя цена следующая за $p_{n}$: $p_{n} = p_{n} * (1 + d/100)$
+	\\
+	\\
+	Коментарий: несмотря на то, что существует рекурсивное решение требующее память равную $O(1)$ (сведение решения к хвостовой рекурсии либо выпрямление рекурсии в цикл),
+	следует помнить, что для многих рекурентных формул существуют более выгодные аналитические решения.
+	\clearpage
+	\paragraph{2} Найти все натуральные числа от 1 до 1000, которые совпадают с последними разрядами своих квадратов, например: $25^2 = 625$; $76^2 = 5676$.\\
+	\\
+	\emph{Решение:}
+	Функция определения количества цифр требуемых для записи числа в системе счисления с базисом $r$ (en: r - radix, dc - digits count). \\ \\
+	\ensuremath{
+		dc_{radix} (n) = ceil( log_{radix}( n + 1 ) ) \\
+		\hbox{ где } ceil( f ) \hbox{ - функция округление до целого в большую сторону} \\
+	}
+	\\
+	Функция получения числа образуемого двумя младшими разрядами числа (en: lsd - least significant digits ). \\ \\
+	\ensuremath{
+		lsd_{radix} (n) = n \, mod \, (radix)^{dc_{radix}(n)}
+	}
+	\\
+	Функция проверки числа на описанное в задаче условие: \\ \\
+	\ensuremath{
+		test_{radix} (n) = eq( n\, , \, l2sd_{radix}( n^{2} ) )
+	} \\
+	где $eq( n_{1} \, , \, n_{2} )$ – функция булевого типа равная истине только при равных друг другу аргументах
+	\\
+	\clearpage
+	\paragraph{3} Нахождение НОД при помощи алгоритма Евклида. \\
+	\\
+	\emph{Решение:}
+	\\
+	Довольно тривиально и не требует пояснения.
+	\clearpage
+	\lstinputlisting[language=C]{rg-anp-rw-3-1-5.c}
+	\clearpage
+	\lstinputlisting[]{rg-anp-rw-3-1-5.output}
+\end{document}
