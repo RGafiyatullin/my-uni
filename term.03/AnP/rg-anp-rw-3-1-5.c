@@ -98,11 +98,11 @@ void part_3() {
 }
 
 int main(int argc, char** argv) {
-	printf("======================= part 1 =====================\n");
+	printf("====== part 1 ======\n");
 	part_1();
-	printf("======================= part 2 =====================\n");
+	printf("====== part 2 ======\n");
 	part_2();
-	printf("======================= part 2 =====================\n");
+	printf("====== part 3 ======\n");
 	part_3();
 	return 0;
 }
